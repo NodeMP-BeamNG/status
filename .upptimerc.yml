@@ -12,12 +12,9 @@ sites:
     slug: site
     url: https://nodemp.com/ru
     maxResponseTime: 3000
-  - name: Вход и аккаунты
-    slug: accounts
+  - name: API
+    slug: api
     url: https://api.nodemp.com/healthz
-  - name: Список серверов
-    slug: server-list
-    url: https://api.nodemp.com/v1/browser/list
     maxResponseTime: 2000
   - name: Документация
     slug: docs

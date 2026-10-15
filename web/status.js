@@ -88,17 +88,16 @@ function serviceRow(site, state, days, now) {
 
 function summaryLine(sites, states) {
   const box = document.getElementById("summary");
-  const text = document.getElementById("summary-text");
   const named = (s) => sites.filter((_, i) => states[i] === s).map((x) => x.name).join(", ");
   if (states.includes("down")) {
     box.className = "summary down";
-    text.textContent = `Сбой: ${named("down")}`;
+    box.textContent = `Сбой: ${named("down")}`;
   } else if (states.includes("degraded")) {
     box.className = "summary slow";
-    text.textContent = `Отвечают медленно: ${named("degraded")}`;
+    box.textContent = `Отвечают медленно: ${named("degraded")}`;
   } else {
-    box.className = "summary up";
-    text.textContent = "Все сервисы работают";
+    box.className = "summary";
+    box.textContent = "Все сервисы работают";
   }
 }
 
@@ -162,8 +161,9 @@ async function refresh() {
     const sites = await loadServices();
     await loadIncidents(sites);
   } catch {
-    document.getElementById("summary").className = "summary";
-    document.getElementById("summary-text").textContent = "Не удалось загрузить данные проверок. Попробуйте обновить страницу.";
+    const box = document.getElementById("summary");
+    box.className = "summary";
+    box.textContent = "Не удалось загрузить данные проверок. Попробуйте обновить страницу.";
   }
 }
 

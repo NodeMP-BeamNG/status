@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Работают ли сайт, вход, список серверов и документация NodeMP.">
+  <meta name="description" content="Работают ли сайт, API и документация NodeMP.">
   <title>Статус сервисов · NodeMP</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/web/mark.svg" type="image/svg+xml">
@@ -15,23 +15,22 @@
 </head>
 <body>
   <header class="top">
-    <div class="wrap top-row">
-      <a class="brand" href="https://nodemp.com" aria-label="nodemp.com">
-        <img src="/web/mark.svg" width="28" height="28" alt="">
-        <span>NodeMP</span>
-      </a>
-      <a class="to-site" href="https://nodemp.com">nodemp.com</a>
-    </div>
+    <nav class="site-bar" aria-label="NodeMP">
+      <a class="bar-logo" href="https://nodemp.com/ru" aria-label="nodemp.com"><img src="/web/mark.svg" width="22" height="22" alt=""></a>
+      <span class="bar-div" aria-hidden="true"></span>
+      <a class="wide" href="https://nodemp.com/ru/news">Новости</a>
+      <a href="https://nodemp.com/ru/servers">Серверы</a>
+      <a class="wide" href="https://nodemp.com/ru/download">Скачать</a>
+      <span class="bar-div" aria-hidden="true"></span>
+      <a href="https://docs.nodemp.com/ru/">Документация</a>
+    </nav>
   </header>
 
   <main class="wrap">
     <h1>Статус сервисов</h1>
-    <p class="lede">Работают ли сайт, вход, список серверов и документация NodeMP.</p>
+    <p class="lede">Работают ли сайт, API и документация NodeMP.</p>
 
-    <div class="summary" id="summary" aria-live="polite">
-      <span class="dot"></span>
-      <span id="summary-text">Загрузка…</span>
-    </div>
+    <p class="summary" id="summary" aria-live="polite">Загрузка…</p>
 
     <section aria-label="Сервисы">
       <ul class="card services" id="services"></ul>
@@ -46,7 +45,7 @@
   </main>
 
   <footer class="wrap foot">
-    <p>Проверка каждые 5 минут, из GitHub Actions и независимо от наших серверов. История проверок — в репозитории <a href="https://github.com/NodeMP-BeamNG/status">NodeMP-BeamNG/status</a>.</p>
+    <p>Проверяем каждые 5 минут с серверов GitHub, а не с наших. <a href="https://github.com/NodeMP-BeamNG/status">История проверок</a></p>
   </footer>
 </body>
 </html>
