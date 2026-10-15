@@ -58,7 +58,7 @@ a:hover { text-decoration-color: var(--fg); }
   .site-bar .wide { display: none; }
 }
 
-main { flex: 1; padding-top: 56px; padding-bottom: 32px; }
+main { flex: 1; padding-top: 56px; padding-bottom: 56px; }
 h1 { margin: 0; font: 800 clamp(30px, 6vw, 40px)/1.1 "Unbounded", sans-serif; letter-spacing: -0.01em; text-wrap: balance; }
 .lede { margin: 12px 0 28px; color: var(--fg-muted); font-size: 16px; }
 h2 { margin: 40px 0 14px; font-size: 18px; font-weight: 600; }
@@ -103,7 +103,3 @@ h2 { margin: 40px 0 14px; font-size: 18px; font-weight: 600; }
 .incident .what { font-weight: 600; }
 .incident .what .open { color: var(--down); }
 .incident .when { color: var(--fg-muted); font-size: 13px; }
-
-.foot { padding-bottom: 40px; color: var(--fg-muted); font-size: 13px; }
-.foot p { margin: 0; }
-.foot a { margin-left: 4px; }
