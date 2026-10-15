@@ -3,7 +3,13 @@ repo: status
 user-agent: NodeMP-BeamNG
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
-secrets: []
+# Only what the Telegram messages need; Upptime passes nothing else to its workflows.
+secrets:
+  - NOTIFICATION_TELEGRAM
+  - NOTIFICATION_TELEGRAM_BOT_KEY
+  - NOTIFICATION_TELEGRAM_CHAT_ID
+  - NOTIFICATIONS_DOWN_MESSAGE
+  - NOTIFICATIONS_UP_MESSAGE
 
 # One line per service a player or a host uses, the way large status pages list their parts.
 # Game servers are not a service of ours: none is listed.
@@ -29,14 +35,15 @@ status-website:
 # Plain messages: no emoji, and no [skip ci], which would also skip the Pages build that
 # publishes each status change. Upptime's push workflows only watch .upptimerc.yml and assets/.
 # The summary reads a site's state from the first word of its last status commit, so the word
-# must be one of these three prefixes (Upptime's default is an emoji).
-commitPrefixStatusUp: "UP"
-commitPrefixStatusDown: "DOWN"
-commitPrefixStatusDegraded: "SLOW"
+# must be one of these three prefixes (Upptime's default is an emoji). The Telegram messages
+# start with the same word ($EMOJI in NOTIFICATIONS_*_MESSAGE).
+commitPrefixStatusUp: "Работает"
+commitPrefixStatusDown: "Сбой"
+commitPrefixStatusDegraded: "Медленно"
 commitMessages:
   readmeContent: "README: summary [upptime]"
   summaryJson: "Status summary [upptime]"
-  statusChange: "$PREFIX $SITE_NAME: $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [upptime]"
+  statusChange: "$PREFIX: $SITE_NAME ($RESPONSE_CODE in $RESPONSE_TIME ms) [upptime]"
   graphsUpdate: "Graphs [upptime]"
 
 i18n:
