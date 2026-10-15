@@ -28,10 +28,15 @@ status-website:
 
 # Plain messages: no emoji, and no [skip ci], which would also skip the Pages build that
 # publishes each status change. Upptime's push workflows only watch .upptimerc.yml and assets/.
+# The summary reads a site's state from the first word of its last status commit, so the word
+# must be one of these three prefixes (Upptime's default is an emoji).
+commitPrefixStatusUp: "UP"
+commitPrefixStatusDown: "DOWN"
+commitPrefixStatusDegraded: "SLOW"
 commitMessages:
   readmeContent: "README: summary [upptime]"
   summaryJson: "Status summary [upptime]"
-  statusChange: "$SITE_NAME: $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [upptime]"
+  statusChange: "$PREFIX $SITE_NAME: $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [upptime]"
   graphsUpdate: "Graphs [upptime]"
 
 i18n:
