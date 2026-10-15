@@ -23,23 +23,19 @@ sites:
     slug: docs
     url: https://docs.nodemp.com/ru/
 
+# The page itself is ours (index.html, web/), served by GitHub Pages from master; Upptime's own
+# site build (Static Site CI) is switched off. The README still links the address below.
 status-website:
   cname: status.nodemp.com
   name: NodeMP
-  logoUrl: https://nodemp.com/brand/mark.svg
-  favicon: https://nodemp.com/favicon.ico
-  faviconSvg: https://nodemp.com/brand/mark.svg
-  themeUrl: https://status.nodemp.com/nodemp.css
-  introTitle: Статус сервисов
-  introMessage: Работают ли сайт, вход, список серверов и документация NodeMP. Проверка — каждые 5 минут.
-  navbar:
-    - title: Статус
-      href: /
-    - title: nodemp.com
-      href: https://nodemp.com
-  metaTags:
-    - name: color-scheme
-      content: dark
+
+# Plain messages: no emoji, and no [skip ci], which would also skip the Pages build that
+# publishes each status change. Upptime's push workflows only watch .upptimerc.yml and assets/.
+commitMessages:
+  readmeContent: "README: summary [upptime]"
+  summaryJson: "Status summary [upptime]"
+  statusChange: "$SITE_NAME: $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [upptime]"
+  graphsUpdate: "Graphs [upptime]"
 
 i18n:
   locale: ru-RU
