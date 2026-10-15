@@ -54,8 +54,14 @@ a:hover { text-decoration-color: var(--fg); }
 .site-bar a:hover { background: rgb(255 255 255 / 0.05); color: var(--fg); }
 .site-bar .bar-logo { padding: 0 8px; }
 .bar-div { width: 1px; height: 20px; margin: 0 6px; flex: none; background: rgb(255 255 255 / 0.1); }
+/* RU | EN as on the site: a sliding lifted pill under the current one. */
+.lang { position: relative; display: inline-flex; flex: none; padding: 3px; border-radius: 13px; background: rgb(255 255 255 / 0.05); }
+.lang-pill { position: absolute; top: 3px; left: 3px; width: 40px; height: 28px; border-radius: 10px; background: rgb(255 255 255 / 0.1); transition: transform 0.2s; }
+.lang[data-current="en"] .lang-pill { transform: translateX(40px); }
+.lang button { position: relative; width: 40px; height: 28px; padding: 0; border: 0; border-radius: 10px; background: none; color: var(--fg-muted); font: 500 13px/1 "Golos Text", system-ui, sans-serif; cursor: pointer; transition: color 0.2s; }
+.lang button:hover, .lang button[aria-pressed="true"] { color: var(--fg); }
 @media (max-width: 480px) {
-  .site-bar .wide { display: none; }
+  .site-bar .wide, .site-bar .wide + .bar-div { display: none; }
 }
 
 main { flex: 1; padding-top: 56px; padding-bottom: 56px; }

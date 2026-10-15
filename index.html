@@ -16,32 +16,38 @@
 <body>
   <header class="top">
     <nav class="site-bar" aria-label="NodeMP">
-      <a class="bar-logo" href="https://nodemp.com/ru" aria-label="nodemp.com"><img src="/web/mark.svg" width="22" height="22" alt=""></a>
+      <a class="bar-logo" data-site="" href="https://nodemp.com/ru" aria-label="nodemp.com"><img src="/web/mark.svg" width="22" height="22" alt=""></a>
       <span class="bar-div" aria-hidden="true"></span>
-      <a class="wide" href="https://nodemp.com/ru/news">Новости</a>
-      <a href="https://nodemp.com/ru/servers">Серверы</a>
-      <a class="wide" href="https://nodemp.com/ru/download">Скачать</a>
+      <a class="wide" data-site="/news" data-t="news" href="https://nodemp.com/ru/news">Новости</a>
+      <a data-site="/servers" data-t="servers" href="https://nodemp.com/ru/servers">Серверы</a>
+      <a class="wide" data-site="/download" data-t="download" href="https://nodemp.com/ru/download">Скачать</a>
       <span class="bar-div" aria-hidden="true"></span>
-      <a href="https://docs.nodemp.com/ru/">Документация</a>
+      <a data-docs data-t="docs" href="https://docs.nodemp.com/ru/">Документация</a>
+      <span class="bar-div" aria-hidden="true"></span>
+      <div class="lang" role="group" aria-label="Язык" data-t-label="language">
+        <span class="lang-pill" aria-hidden="true"></span>
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
     </nav>
   </header>
 
   <main class="wrap">
-    <h1>Статус сервисов</h1>
-    <p class="lede">Работают ли сайт, API и документация NodeMP.</p>
+    <h1 data-t="title">Статус сервисов</h1>
+    <p class="lede" data-t="lede">Работают ли сайт, API и документация NodeMP.</p>
 
     <p class="summary" id="summary" aria-live="polite">Загрузка…</p>
 
-    <section aria-label="Сервисы">
+    <section aria-label="Сервисы" data-t-label="services">
       <ul class="card services" id="services"></ul>
     </section>
 
     <section aria-labelledby="incidents-title">
-      <h2 id="incidents-title">Сбои</h2>
+      <h2 id="incidents-title" data-t="incidents">Сбои</h2>
       <div class="card incidents" id="incidents"><p class="muted">Загрузка…</p></div>
     </section>
 
-    <noscript><p class="muted">Странице нужен JavaScript. Данные проверок лежат в репозитории <a href="https://github.com/NodeMP-BeamNG/status">NodeMP-BeamNG/status</a>.</p></noscript>
+    <noscript><p class="muted">Странице нужен JavaScript. This page needs JavaScript. <a href="https://github.com/NodeMP-BeamNG/status">NodeMP-BeamNG/status</a></p></noscript>
   </main>
 </body>
 </html>
