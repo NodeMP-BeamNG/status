@@ -138,7 +138,26 @@ function lastDays(now) {
   return Array.from({ length: DAYS }, (_, i) => today - (DAYS - 1 - i) * DAY_MS);
 }
 
-function serviceRow(site, state, days, now) {
+/** Minutes down per UTC day from the incidents themselves: the summary is recounted once a day, so an outage of today is not in it yet. */
+function incidentMinutes(issues, slug, now) {
+  const out = {};
+  for (const i of issues || []) {
+    if (!(i.labels || []).some((l) => l.name === slug)) continue;
+    let from = Date.parse(i.created_at);
+    const to = i.closed_at ? Date.parse(i.closed_at) : now;
+    while (from < to) {
+      const dayEnd = (Math.floor(from / DAY_MS) + 1) * DAY_MS;
+      const end = Math.min(to, dayEnd);
+      const key = new Date(from).toISOString().slice(0, 10);
+      out[key] = (out[key] || 0) + Math.round((end - from) / 60000);
+      from = end;
+    }
+  }
+  return out;
+}
+
+function serviceRow(site, state, days, now, issues) {
+  const fromIncidents = incidentMinutes(issues, site.slug, now);
   const cls = { up: "up", degraded: "slow", down: "down" }[state];
   const li = el("li");
   const head = el("div", "row-head");
@@ -151,7 +170,7 @@ function serviceRow(site, state, days, now) {
     const key = new Date(start).toISOString().slice(0, 10);
     const from = Math.max(start, SINCE);
     const to = Math.min(start + DAY_MS, now);
-    const min = (site.dailyMinutesDown && site.dailyMinutesDown[key]) || 0;
+    const min = Math.max((site.dailyMinutesDown && site.dailyMinutesDown[key]) || 0, fromIncidents[key] || 0);
     const isToday = start + DAY_MS > now;
     const day = fmt.day.format(start);
     let barCls = "";
@@ -180,10 +199,10 @@ function serviceRow(site, state, days, now) {
   return li;
 }
 
-function drawServices({ sum, states }) {
+function drawServices({ sum, states, issues }) {
   const now = Date.now();
   const days = lastDays(now);
-  document.getElementById("services").replaceChildren(...sum.map((s, i) => serviceRow(s, states[i], days, now)));
+  document.getElementById("services").replaceChildren(...sum.map((s, i) => serviceRow(s, states[i], days, now, issues)));
   const box = document.getElementById("summary");
   const named = (s) => sum.filter((_, i) => states[i] === s).map(nameOf).join(", ");
   if (states.includes("down")) {
@@ -292,6 +311,7 @@ async function refresh() {
     last = { sum, states: states.map((s) => (s in T.ru.state ? s : "up")), issues: undefined };
     drawServices(last);
     last.issues = await loadIssues();
+    if (last.issues && last.issues.length) drawServices(last);
     drawIncidents(sum, last.issues);
   } catch {
     const box = document.getElementById("summary");
