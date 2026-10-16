@@ -41,18 +41,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/docs.nodemp.com.ico",
     "slug": "docs",
     "status": "up",
-    "uptime": "98.86%",
-    "uptimeDay": "98.86%",
-    "uptimeWeek": "98.86%",
-    "uptimeMonth": "98.86%",
-    "uptimeYear": "98.86%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 312,
     "timeDay": 312,
     "timeWeek": 312,
     "timeMonth": 312,
     "timeYear": 312,
-    "dailyMinutesDown": {
-      "2026-10-16": 10
-    }
+    "dailyMinutesDown": {}
   }
 ]
