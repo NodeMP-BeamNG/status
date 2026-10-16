@@ -24,7 +24,7 @@ sites:
     maxResponseTime: 2000
   - name: Документация
     slug: docs
-    url: https://docs.nodemp.com/ru/
+    url: https://docs.nodemp.com/ru/__status-drill
 
 # The page itself is ours (index.html, web/), served by GitHub Pages from master; Upptime's own
 # site build (Static Site CI) is switched off. The README still links the address below.
