@@ -3,11 +3,13 @@ repo: status
 user-agent: NodeMP-BeamNG
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
-# Only what the Telegram messages need; Upptime passes nothing else to its workflows.
+# Only what the Telegram and Discord messages need; Upptime passes nothing else to its workflows.
+# NOTIFICATION_DISCORD_WEBHOOK_URL is the team channel's webhook; it is a repository secret, never a line here.
 secrets:
   - NOTIFICATION_TELEGRAM
   - NOTIFICATION_TELEGRAM_BOT_KEY
   - NOTIFICATION_TELEGRAM_CHAT_ID
+  - NOTIFICATION_DISCORD_WEBHOOK_URL
   - NOTIFICATIONS_DOWN_MESSAGE
   - NOTIFICATIONS_UP_MESSAGE
 
