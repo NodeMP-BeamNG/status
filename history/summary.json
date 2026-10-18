@@ -4,18 +4,20 @@
     "url": "https://nodemp.com/ru",
     "icon": "https://icons.duckduckgo.com/ip3/nodemp.com.ico",
     "slug": "site",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 621,
-    "timeDay": 664,
-    "timeWeek": 621,
-    "timeMonth": 621,
-    "timeYear": 621,
-    "dailyMinutesDown": {}
+    "time": 612,
+    "timeDay": 592,
+    "timeWeek": 612,
+    "timeMonth": 612,
+    "timeYear": 612,
+    "dailyMinutesDown": {
+      "2026-10-18": 0
+    }
   },
   {
     "name": "API",
