@@ -5,16 +5,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/nodemp.com.ico",
     "slug": "site",
     "status": "up",
-    "uptime": "99.16%",
+    "uptime": "99.20%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "99.16%",
-    "uptimeYear": "99.16%",
-    "time": 606,
-    "timeDay": 831,
-    "timeWeek": 648,
-    "timeMonth": 606,
-    "timeYear": 606,
+    "uptimeMonth": "99.20%",
+    "uptimeYear": "99.20%",
+    "time": 611,
+    "timeDay": 752,
+    "timeWeek": 660,
+    "timeMonth": 611,
+    "timeYear": 611,
     "dailyMinutesDown": {
       "2026-10-18": 223
     }
@@ -30,11 +30,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 493,
-    "timeDay": 596,
-    "timeWeek": 508,
-    "timeMonth": 493,
-    "timeYear": 493,
+    "time": 497,
+    "timeDay": 600,
+    "timeWeek": 515,
+    "timeMonth": 497,
+    "timeYear": 497,
     "dailyMinutesDown": {}
   },
   {
@@ -48,11 +48,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 259,
-    "timeDay": 462,
-    "timeWeek": 273,
-    "timeMonth": 259,
-    "timeYear": 259,
+    "time": 264,
+    "timeDay": 377,
+    "timeWeek": 291,
+    "timeMonth": 264,
+    "timeYear": 264,
     "dailyMinutesDown": {}
   }
 ]
