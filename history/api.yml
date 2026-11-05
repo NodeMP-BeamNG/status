@@ -1,7 +1,7 @@
 url: https://api.nodemp.com/healthz
-status: degraded
-code: 503
-responseTime: 6635
-lastUpdated: 2026-11-05T05:43:08.605Z
+status: up
+code: 200
+responseTime: 546
+lastUpdated: 2026-11-05T17:14:20.496Z
 startTime: 2026-10-15T19:30:17.138Z
 generator: Upptime <https://github.com/upptime/upptime>
