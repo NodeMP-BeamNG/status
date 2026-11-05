@@ -1,7 +1,7 @@
 url: https://nodemp.com/ru
-status: up
-code: 200
-responseTime: 678
-lastUpdated: 2026-11-05T03:22:29.021Z
+status: degraded
+code: 522
+responseTime: 19534
+lastUpdated: 2026-11-05T13:31:41.840Z
 startTime: 2026-10-15T19:05:38.618Z
 generator: Upptime <https://github.com/upptime/upptime>
